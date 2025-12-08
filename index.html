@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Translation Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Insert or type text to check:</h1>
+
+  <form onsubmit="return false;">
+    <div class="wrapper">
+      <textarea id="textInput" class="text-input"
+        placeholder='Type or paste text here, then press "Check".'></textarea>
+    </div>
+    <div style="margin-top:10px;">
+      <button type="button" onclick="checkText()">Check</button>
+      <button type="button" onclick="clearText()">Clear</button>
+      <button type="button" onclick="updateRules()">Update Rules</button>
+    </div>
+  </form>
+
+  <script src="check.js"></script>
+</body>
+</html>

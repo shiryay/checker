@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.text-input {
+  position: relative;
+  background: transparent;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 200px;
+  resize: vertical;
+}
+
