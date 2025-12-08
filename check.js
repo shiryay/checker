@@ -96,32 +96,3 @@ function clearText() {
   textInput.value = '';
   textInput.focus();
 }
-
-// Updating rules from github
-function updateRules() {
-  const url = 'https://raw.githubusercontent.com/shiryay/FileValidator/refs/heads/master/FileValidator/rules.cfg';
-
-  fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok: ' + response.status);
-      }
-      return response.text();
-    })
-    .then(text => {
-      const blob = new Blob([text], { type: 'text/plain' });
-      const blobUrl = URL.createObjectURL(blob);
-
-      const a = document.createElement('a');
-      a.href = blobUrl;
-      a.download = 'rules.cfg'; // user will be prompted where to save
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(blobUrl);
-    })
-    .catch(err => {
-      console.error('Error updating rules.cfg:', err);
-      alert('Failed to update rules.cfg. See console for details.');
-    });
-}
