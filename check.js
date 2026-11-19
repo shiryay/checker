@@ -87,8 +87,8 @@ function checkText() {
 
   loadCfg()
     .then(() => {
-      var report = buildReport(originalText);
-      if !endsWithTranslationMarker(originalText) {
+      let report = buildReport(originalText);
+      if (!endsWithTranslationMarker(originalText)) {
         report = report += "No ---end of translation--- at the end"
       }
       textInput.value = report; // clear input and show results
