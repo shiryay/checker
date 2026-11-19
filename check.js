@@ -89,7 +89,7 @@ function checkText() {
     .then(() => {
       let report = buildReport(originalText);
       if (!endsWithTranslationMarker(originalText)) {
-        report = report += "No ---end of translation--- at the end"
+        report = report += "\nNo ---end of translation--- at the end"
       }
       textInput.value = report; // clear input and show results
     })
