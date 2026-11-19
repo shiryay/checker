@@ -76,13 +76,21 @@ function buildReport(text) {
   return lines.join('\n');
 }
 
+function endsWithTranslationMarker(text) {
+    const marker = "---end of translation---";
+    return text.endsWith(marker);
+}
+
 // Called by the "Check" button
 function checkText() {
   const originalText = textInput.value;
 
   loadCfg()
     .then(() => {
-      const report = buildReport(originalText);
+      var report = buildReport(originalText);
+      if not endsWithTranslationMarker(originalText) {
+        report = report += "No ---end of translation--- at the end"
+      }
       textInput.value = report; // clear input and show results
     })
     .catch(err => {
