@@ -78,7 +78,8 @@ function buildReport(text) {
 
 function endsWithTranslationMarker(text) {
     const marker = "---end of translation---";
-    return text.endsWith(marker);
+    const trimmedText = text.trimEnd();
+    return trimmedText.endsWith(marker);
 }
 
 // Called by the "Check" button
